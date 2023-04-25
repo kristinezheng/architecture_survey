@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MIT 9.60 Tutorial: Online Experiments</title>
+    <meta http-equiv="pragma" content="no-cache">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link href="https://unpkg.com/jspsych@7.3.1/css/jspsych.css" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/jspsych@7.3.1"></script>
+    <!-- <script src="https://unpkg.com/@jspsych/plugin-preload@1.1.2"></script> -->
+    <!-- <script src="https://unpkg.com/@jspsych/plugin-instructions@1.1.2"></script> -->
+    <!-- <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.1.2"></script> -->
+    <script src="https://unpkg.com/@jspsych/plugin-html-button-response@1.1.2"></script>
+    <!-- <script src="https://unpkg.com/@jspsych/plugin-html-slider-response@1.1.2"></script> -->
+    <!-- <script src="https://unpkg.com/@jspsych/plugin-image-keyboard-response@1.1.2"></script> -->
+    <!-- <script src="https://unpkg.com/@jspsych/plugin-image-button-response@1.1.2"></script> -->
+    <!-- <script src="https://unpkg.com/@jspsych/plugin-image-slider-response@1.1.2"></script> -->
+    <!-- <script src="https://unpkg.com/@jspsych/plugin-survey-html-form@1.1.2"></script> -->
+    <!-- <script src="https://unpkg.com/@jspsych/plugin-survey-text@1.1.2"></script> -->
+    <!-- <script src="https://unpkg.com/@jspsych/plugin-categorize-html@1.1.2"></script> -->
+    <!-- <script src="https://unpkg.com/@jspsych/plugin-categorize-image@1.1.2"></script> -->
+    <!-- <script src="https://unpkg.com/@jspsych/plugin-free-sort@1.0.2"></script> -->
+    <!-- <script src="https://unpkg.com/@jspsych/extension-mouse-tracking@1.0.2"></script> -->
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
+    <script src="util.js"></script>
+</head>
+
+<body></body>
+
+<script>
+    var jsPsych = initJsPsych({
+        on_finish: function () {
+            jsPsych.data.displayData();
+        }
+    });
+
+    var trial = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: [
+            '<h2>MIT 9.60 Tutorial: Online Psychophysics Experiments</h2>' +
+            '<h3>The links below lead to example experiments from this tutorial:</h3>' +
+            '<p><a href="https://msaddler.scripts.mit.edu/jspsych_tutorial_960/0_hello_world.html?subject_id=tmp">Experiment 0: Hello World</a></p>' +
+            '<p><a href="https://msaddler.scripts.mit.edu/jspsych_tutorial_960/1_beginner.html?subject_id=tmp">Experiment 1: Beginner</a></p>' +
+            '<p><a href="https://msaddler.scripts.mit.edu/jspsych_tutorial_960/2_intermediate.html?subject_id=tmp">Experiment 2: Intermediate</a></p>' +
+            '<p><a href="https://msaddler.scripts.mit.edu/jspsych_tutorial_960/3_advanced.html?subject_id=tmp">Experiment 3: Advanced</a></p>' +
+            '<p><a href="https://msaddler.scripts.mit.edu/jspsych_tutorial_960/4_expert.html?subject_id=tmp">Experiment 4: Expert</a></p>'
+        ],
+        choices: [],
+    };
+
+    jsPsych.run([trial]);
+</script>
+
+</html>
